@@ -4,54 +4,50 @@ import Link from "next/link";
 
 const SingleBlog = ({ blog }: { blog: Blog }) => {
   const { title, image, paragraph, author, tags, publishDate } = blog;
+
   return (
-    <>
-      <div className="group shadow-one hover:shadow-two dark:bg-dark dark:hover:shadow-gray-dark relative overflow-hidden rounded-xs bg-white duration-300">
-        <Link
-          href="/blog-details"
-          className="relative block aspect-37/22 w-full"
-        >
-          <span className="bg-primary absolute top-6 right-6 z-20 inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white capitalize">
-            {tags[0]}
-          </span>
-          <Image src={image} alt="image" fill />
-        </Link>
-        <div className="p-6 sm:p-8 md:px-6 md:py-8 lg:p-8 xl:px-5 xl:py-8 2xl:p-8">
-          <h3>
-            <Link
-              href="/blog-details"
-              className="hover:text-primary dark:hover:text-primary mb-4 block text-xl font-bold text-black sm:text-2xl dark:text-white"
-            >
-              {title}
-            </Link>
-          </h3>
-          <p className="border-body-color/10 text-body-color mb-6 border-b pb-6 text-base font-medium dark:border-white/10">
-            {paragraph}
-          </p>
-          <div className="flex items-center">
-            <div className="border-body-color/10 mr-5 flex items-center border-r pr-5 xl:mr-3 xl:pr-3 2xl:mr-5 2xl:pr-5 dark:border-white/10">
-              <div className="mr-4">
-                <div className="relative h-10 w-10 overflow-hidden rounded-full">
-                  <Image src={author.image} alt="author" fill />
-                </div>
-              </div>
-              <div className="w-full">
-                <h4 className="text-dark mb-1 text-sm font-medium dark:text-white">
-                  By {author.name}
-                </h4>
-                <p className="text-body-color text-xs">{author.designation}</p>
-              </div>
+    <div className="group relative overflow-hidden rounded-2xl border border-yellow-100 dark:border-yellow-500/20 bg-white dark:bg-gray-900 shadow-lg hover:shadow-yellow-200 dark:hover:shadow-yellow-400 transition duration-300">
+      {/* Image + Tag */}
+      <Link href="/blog-details" className="relative block aspect-video w-full">
+        <Image src={image} alt="blog image" fill className="object-cover rounded-t-2xl" />
+        <span className="absolute top-4 left-4 z-10 rounded-full bg-yellow-500 px-4 py-1 text-sm font-semibold text-white shadow-md">
+          {tags[0]}
+        </span>
+      </Link>
+
+      {/* Content */}
+      <div className="p-6 sm:p-8">
+        <h3>
+          <Link
+            href="/blog-details"
+            className="mb-3 block text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white hover:text-yellow-500 dark:hover:text-yellow-400 transition"
+          >
+            {title}
+          </Link>
+        </h3>
+
+        <p className="mb-6 text-sm text-gray-700 dark:text-gray-300 leading-relaxed border-b border-yellow-100 dark:border-yellow-500/20 pb-6">
+          {paragraph}
+        </p>
+
+        {/* Author + Date */}
+        <div className="flex items-center justify-between text-sm">
+          <div className="flex items-center gap-3">
+            <div className="relative h-10 w-10 rounded-full overflow-hidden border border-yellow-300">
+              <Image src={author.image} alt="author" fill className="object-cover" />
             </div>
-            <div className="inline-block">
-              <h4 className="text-dark mb-1 text-sm font-medium dark:text-white">
-                Date
-              </h4>
-              <p className="text-body-color text-xs">{publishDate}</p>
+            <div>
+              <p className="text-gray-900 dark:text-white font-semibold">By {author.name}</p>
+              <p className="text-gray-500 dark:text-gray-400 text-xs">{author.designation}</p>
             </div>
+          </div>
+          <div className="text-right">
+            <p className="text-gray-900 dark:text-white font-semibold">Date</p>
+            <p className="text-gray-500 dark:text-gray-400 text-xs">{publishDate}</p>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
