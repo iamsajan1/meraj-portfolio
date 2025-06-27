@@ -1,69 +1,69 @@
 "use client";
 
-import VideoModal from "@/components/video-modal";
 import Image from "next/image";
-import { useState } from "react";
-import SectionTitle from "../Common/SectionTitle";
+import { Rocket, ShieldCheck, TrendingUp } from "lucide-react";
 
 export default function Video() {
-  const [isOpen, setOpen] = useState(false);
-
   return (
-    <>
-      <section className="relative z-10 py-16 md:py-20 lg:py-28">
-        <div className="container">
-          <SectionTitle
-            title="We are ready to help"
-            paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
-            center
-            mb="80px"
+    <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-white dark:bg-gray-900">
+      <div className="absolute inset-0 -z-10">
+        <svg
+          viewBox="0 0 1440 320"
+          className="w-full h-full opacity-40 dark:opacity-20"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="patternGold" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#f5c242" stopOpacity="0.15" />
+              <stop offset="100%" stopColor="transparent" />
+            </linearGradient>
+          </defs>
+          <path
+            fill="url(#patternGold)"
+            d="M0,64L48,85.3C96,107,192,149,288,149.3C384,149,480,107,576,85.3C672,64,768,64,864,80C960,96,1056,128,1152,149.3C1248,171,1344,181,1392,186.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
           />
-        </div>
-        <div className="relative overflow-hidden">
-          <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4">
-              <div className="mx-auto max-w-[770px] overflow-hidden rounded-md">
-                <div className="relative aspect-77/40 items-center justify-center">
-                  <Image
-                    src="/images/video/image.png"
-                    alt="video image"
-                    className="object-cover"
-                    fill
-                  />
-                  <div className="absolute top-0 right-0 flex h-full w-full items-center justify-center">
-                    <button
-                      aria-label="video play button"
-                      onClick={() => setOpen(true)}
-                      className="text-primary flex h-[70px] w-[70px] items-center justify-center rounded-full bg-white/75 transition hover:bg-white"
-                    >
-                      <svg
-                        width="16"
-                        height="18"
-                        viewBox="0 0 16 18"
-                        className="fill-current"
-                      >
-                        <path d="M15.5 8.13397C16.1667 8.51888 16.1667 9.48112 15.5 9.86602L2 17.6603C1.33333 18.0452 0.499999 17.564 0.499999 16.7942L0.5 1.20577C0.5 0.43597 1.33333 -0.0451549 2 0.339745L15.5 8.13397Z" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        </svg>
+      </div>
 
-          <div className="absolute right-0 bottom-0 left-0 z-[-1] h-full w-full bg-[url(/images/video/shape.svg)] bg-cover bg-center bg-no-repeat">
-            {/* <div className="absolute bottom-0 left-0 right-0 z-[-1] "> */}
-            {/* <img src="/images/video/shape.svg" alt="shape" className="w-full" /> */}
+      <div className="container mx-auto px-6 text-center max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold text-dark dark:text-white mb-4">
+          Why Investors Trust Us
+        </h2>
+        <p className="text-lg text-gray-600 dark:text-gray-300 mb-12">
+          Your capital is managed with precision and integrity — backed by legal agreements,
+          transparent reports, and expert trading across multiple markets.
+        </p>
+
+        <div className="grid gap-10 md:grid-cols-3">
+          <div className="flex flex-col items-center text-center">
+            <Rocket className="text-yellow-500 mb-4" size={36} />
+            <h4 className="text-xl font-semibold text-dark dark:text-white mb-2">
+              Fast Capital Growth
+            </h4>
+            <p className="text-gray-600 dark:text-gray-400">
+              Enjoy monthly ROI from 3.5% to 5% with lock-in flexibility for 6 months to 2 years.
+            </p>
+          </div>
+          <div className="flex flex-col items-center text-center">
+            <ShieldCheck className="text-yellow-500 mb-4" size={36} />
+            <h4 className="text-xl font-semibold text-dark dark:text-white mb-2">
+              Full Legal Assurance
+            </h4>
+            <p className="text-gray-600 dark:text-gray-400">
+              Capital agreement and reporting ensure your investment is always protected and tracked.
+            </p>
+          </div>
+          <div className="flex flex-col items-center text-center">
+            <TrendingUp className="text-yellow-500 mb-4" size={36} />
+            <h4 className="text-xl font-semibold text-dark dark:text-white mb-2">
+              Diversified Strategy
+            </h4>
+            <p className="text-gray-600 dark:text-gray-400">
+              We operate across Forex, Prop Firms, and Reserve pools for balanced, consistent results.
+            </p>
           </div>
         </div>
-      </section>
-
-      <VideoModal
-        isOpen={isOpen}
-        onClose={() => setOpen(false)}
-        channel="youtube"
-        videoId="L61p2uyiMSo"
-      />
-    </>
+      </div>
+    </section>
   );
-};
+}

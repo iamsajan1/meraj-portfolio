@@ -1,75 +1,95 @@
+"use client";
+
 import Image from "next/image";
-import SectionTitle from "../Common/SectionTitle";
+import { Rocket, ShieldCheck, TrendingUp } from "lucide-react";
 
-const checkIcon = (
-  <svg width="16" height="13" viewBox="0 0 16 13" className="fill-current">
-    <path d="M5.8535 12.6631C5.65824 12.8584 5.34166 12.8584 5.1464 12.6631L0.678505 8.1952C0.483242 7.99994 0.483242 7.68336 0.678505 7.4881L2.32921 5.83739C2.52467 5.64193 2.84166 5.64216 3.03684 5.83791L5.14622 7.95354C5.34147 8.14936 5.65859 8.14952 5.85403 7.95388L13.3797 0.420561C13.575 0.22513 13.8917 0.225051 14.087 0.420383L15.7381 2.07143C15.9333 2.26669 15.9333 2.58327 15.7381 2.77854L5.8535 12.6631Z" />
-  </svg>
-);
-
-const AboutSectionOne = () => {
-  const List = ({ text }) => (
-    <p className="text-body-color mb-5 flex items-center text-lg font-medium">
-      <span className="bg-primary/10 text-primary mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md">
-        {checkIcon}
-      </span>
-      {text}
-    </p>
-  );
-
+export default function Video() {
   return (
-    <section id="about" className="pt-16 md:pt-20 lg:pt-28">
-      <div className="container">
-        <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
-          <div className="-mx-4 flex flex-wrap items-center">
-            <div className="w-full px-4 lg:w-1/2">
-              <SectionTitle
-                title="Crafted for Startup, SaaS and Business Sites."
-                paragraph="The main ‘thrust’ is to focus on educating attendees on how to best protect highly vulnerable business applications with interactive panel discussions and roundtables."
-                mb="44px"
-              />
+    <section className="relative py-20 md:py-24 lg:py-32 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
+      {/* Stylish Golden Dot and Line Pattern Background */}
+      <div className="absolute inset-0 -z-10">
+        <svg
+          className="w-full h-full"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 960"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <pattern
+              id="goldFancyPattern"
+              patternUnits="userSpaceOnUse"
+              width="100"
+              height="100"
+            >
+              <circle cx="50" cy="50" r="2" fill="#f5c242" fillOpacity="0.3" />
+              <path d="M0 50 H100" stroke="#f5c242" strokeOpacity="0.1" strokeWidth="0.5" />
+              <path d="M50 0 V100" stroke="#f5c242" strokeOpacity="0.1" strokeWidth="0.5" />
+              <path d="M0 0 L100 100" stroke="#f5c242" strokeOpacity="0.05" strokeWidth="1" />
+              <path d="M100 0 L0 100" stroke="#f5c242" strokeOpacity="0.05" strokeWidth="1" />
+            </pattern>
+          </defs>
+          <rect width="1440" height="960" fill="url(#goldFancyPattern)" />
+        </svg>
+      </div>
 
-              <div
-                className="mb-12 max-w-[570px] lg:mb-0"
-                data-wow-delay=".15s"
-              >
-                <div className="mx-[-12px] flex flex-wrap">
-                  <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Premium quality" />
-                    <List text="Tailwind CSS" />
-                    <List text="Use for lifetime" />
-                  </div>
-
-                  <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Next.js" />
-                    <List text="Rich documentation" />
-                    <List text="Developer friendly" />
-                  </div>
-                </div>
-              </div>
+      <div className="container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center gap-20 lg:gap-32">
+        {/* Left Content */}
+        <div className="max-w-xl text-center lg:text-left">
+          <h2 className="text-4xl md:text-5xl font-bold text-dark dark:text-white mb-6 leading-tight">
+            Empower Your Investment Journey
+          </h2>
+          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-10">
+            We help you grow capital confidently with compounding returns, secure legal backing, and diversified fund management. Start building wealth smarter.
+          </p>
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <Rocket className="text-yellow-500" size={24} />
+              <span className="text-dark dark:text-white font-medium">Up to 120% ROI with compounding plans</span>
             </div>
+            <div className="flex items-center gap-3">
+              <ShieldCheck className="text-yellow-500" size={24} />
+              <span className="text-dark dark:text-white font-medium">Capital protected by legal agreements</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <TrendingUp className="text-yellow-500" size={24} />
+              <span className="text-dark dark:text-white font-medium">Diversified strategy: Forex + Prop Firms</span>
+            </div>
+          </div>
+        </div>
 
-            <div className="w-full px-4 lg:w-1/2">
-              <div className="relative mx-auto aspect-25/24 max-w-[500px] lg:mr-0">
-                <Image
-                  src="/images/about/about-image.svg"
-                  alt="about-image"
-                  fill
-                  className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
-                />
-                <Image
-                  src="/images/about/about-image-dark.svg"
-                  alt="about-image"
-                  fill
-                  className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
-                />
-              </div>
+        {/* Right Image Stack - New Dynamic Layout */}
+        <div className="relative w-full max-w-xl">
+          <div className="relative h-[500px]">
+            <div className="absolute top-0 left-0 w-3/5 h-3/5 z-20 rounded-xl overflow-hidden shadow-2xl border-2 border-yellow-400">
+              <Image
+                src="/images/hero/hero1.jpg"
+                alt="Image 1"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-xl"
+              />
+            </div>
+            <div className="absolute bottom-0 right-0 w-3/5 h-3/5 z-10 rounded-xl overflow-hidden shadow-xl border-2 border-yellow-500">
+              <Image
+                src="/images/hero/hero2.jpg"
+                alt="Image 2"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-xl"
+              />
+            </div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-[320px] z-30 rounded-xl overflow-hidden shadow-2xl border-2 border-yellow-300">
+              <Image
+                src="/images/hero/hero3.jpg"
+                alt="Image 3"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-xl"
+              />
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default AboutSectionOne;
+}
