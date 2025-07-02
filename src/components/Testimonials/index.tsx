@@ -1,5 +1,7 @@
-"use client"
+"use client";
+
 import { useState } from "react";
+import { motion, Variants } from "framer-motion";
 import { Testimonial } from "@/types/testimonial";
 import SectionTitle from "../Common/SectionTitle";
 import SingleTestimonial from "./SingleTestimonial";
@@ -53,6 +55,28 @@ const testimonialData: Testimonial[] = [
   },
 ];
 
+// ✅ Strongly typed Framer Motion variants
+const containerVariant: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariant: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut", // ✅ Use string literal value
+    },
+  },
+};
+
 const Testimonials = () => {
   const [startIndex, setStartIndex] = useState(0);
   const itemsPerView = 3;
@@ -79,6 +103,7 @@ const Testimonials = () => {
         />
 
         <div className="relative">
+          {/* Navigation Buttons */}
           <div className="flex justify-end gap-4 mb-6">
             <button
               onClick={handlePrev}
@@ -96,13 +121,22 @@ const Testimonials = () => {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3 transition-all duration-300">
+          {/* Testimonials Grid with Motion */}
+          <motion.div
+            className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3"
+            variants={containerVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {testimonialData
               .slice(startIndex, startIndex + itemsPerView)
               .map((testimonial) => (
-                <SingleTestimonial key={testimonial.id} testimonial={testimonial} />
+                <motion.div key={testimonial.id} variants={cardVariant}>
+                  <SingleTestimonial testimonial={testimonial} />
+                </motion.div>
               ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -47,9 +47,9 @@ const Features = () => {
             </thead>
             <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
               {[
-                ["6 months", "3.5%", "21%", "65/35", "5 Pent"],
-                ["1 year", "4%", "43%", "70/30", "No Pent"],
-                ["2 years", "5%", "120%", "75/25", "No Pent"]
+                ["6 months", "3.5%", "21%", "65/35", "5 penalty"],
+                ["1 year", "4%", "43%", "70/30", "No penalty"],
+                ["2 years", "5%", "120%", "75/25", "No penalty"]
               ].map((row, index) => (
                 <tr
                   key={index}

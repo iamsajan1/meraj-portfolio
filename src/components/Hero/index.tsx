@@ -1,12 +1,14 @@
-"use client"
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
-  "/images/hero/hero1.jpg",
-  "/images/hero/hero2.jpg",
-  "/images/hero/hero3.jpg",
+  "/images/hero/hero6.jpg",
+  "/images/hero/hero7.jpg",
+  "/images/hero/hero8.jpg",
 ];
 
 const Hero = () => {
@@ -15,7 +17,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 4000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -26,34 +28,69 @@ const Hero = () => {
     >
       {/* Background Image Slider */}
       <div className="absolute inset-0 -z-10">
-        <Image
-          src={images[current]}
-          alt="Hero background"
-          layout="fill"
-          objectFit="cover"
-          className="transition-opacity duration-1000 ease-in-out"
-        />
-        <div className="absolute inset-0 bg-black/60" />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.05 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={images[current]}
+              alt="Hero background"
+              layout="fill"
+              objectFit="cover"
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/60" />
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {/* Hero Content */}
       <div className="container mx-auto h-full px-4 text-center flex flex-col justify-center items-center">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+        <motion.h1
+          className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
           SECURE YOUR FUTURE
-        </h1>
-        <h2 className="text-xl sm:text-2xl md:text-3xl text-yellow-400 font-medium mb-4 drop-shadow">
-          with passive monthly income
-        </h2>
-        <p className="max-w-2xl text-lg sm:text-xl text-white/90 mb-10 drop-shadow">
-          We help serious investors grow their wealth through proven trading strategies, smart risk management, and elite market insights.
-        </p>
+        </motion.h1>
 
-        <div className="flex flex-col sm:flex-row gap-4">
+        <motion.h2
+          className="text-xl sm:text-2xl md:text-3xl text-yellow-400 font-medium mb-4 drop-shadow"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          with passive monthly income
+        </motion.h2>
+
+        <motion.p
+          className="max-w-2xl text-lg sm:text-xl text-white/90 mb-10 drop-shadow"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.7 }}
+        >
+          We help serious investors grow their wealth through proven trading strategies, smart risk management, and elite market insights.
+        </motion.p>
+
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.9 }}
+        >
           <Link
-            href="#contact"
+          download="InvestorModel"
+           href="/InvestorModel.pdf"
             className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-8 py-4 rounded-md shadow-md transition duration-300"
           >
-           View purposal Pdf
+            View Proposal PDF
           </Link>
           <Link
             href="#about"
@@ -61,10 +98,11 @@ const Hero = () => {
           >
             Fill Investor Form
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 };
 
 export default Hero;
+                
