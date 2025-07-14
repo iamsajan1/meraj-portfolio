@@ -121,16 +121,16 @@ const Header = () => {
                             href={menuItem.path}
                             className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
                               usePathName === menuItem.path
-                                ? `${sticky ? "text-[#b59459]":"text-[#b59459]"}`
-                                : `${sticky ? "text-dark hover:text-[#b59459]" : "text-white hover:text-[#b59459]"} dark:text-white/70 dark:hover:text-[#b59459]`
-                            }`}
+                                ? "text-[#b59459]"
+                                : sticky
+                                  ? "text-black hover:text-[#b59459] dark:text-white/70"
+                                  : "text-black hover:text-[#b59459] dark:text-white/70"
+                            } `}
                           >
                             {menuItem.title}
                           </Link>
                         ) : (
-                          <>
-                          {/* Main menu item with submenu toggle */}
-                          </>
+                          <>{/* Main menu item with submenu toggle */}</>
                         )}
                       </li>
                     ))}

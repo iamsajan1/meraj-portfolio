@@ -16,13 +16,13 @@ const menuData: Menu[] = [
   {
     id: 33,
     title: "Investment Plans",
-    path: "/InvestmentPlans",
+    path: "/investmentPlans",
     newTab: false,
   },
   {
     id: 3,
     title: "Why Choose Us",
-    path: "/contact",
+    path: "/whyChooseUs",
     newTab: false,
   },
    {

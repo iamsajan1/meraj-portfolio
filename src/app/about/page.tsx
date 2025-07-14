@@ -9,27 +9,33 @@ const AboutPage = () => {
     <main className="bg-white text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-white">
       {/* Hero Section */}
       <section className="relative flex h-[70vh] w-full items-center justify-center bg-transparent text-center">
-        <Image
-          src="/images/hero/hero1.jpg"
-          alt="About Background"
-          layout="fill"
-          objectFit="cover"
-          className="absolute inset-0 opacity-20 dark:opacity-30"
-        />
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="relative z-10 max-w-3xl px-6"
-        >
-          <h1 className="mb-4 text-4xl font-bold text-yellow-600 sm:text-5xl dark:text-yellow-400">
-            About Ahmad FX Investors
-          </h1>
-          <p className="text-lg text-white dark:text-white">
-            Our journey, values, and vision to grow your wealth confidently.
-          </p>
-        </motion.div>
-      </section>
+  {/* Background Image */}
+  <Image
+    src="/images/hero/hero1.jpg"
+    alt="About Background"
+    layout="fill"
+    objectFit="cover"
+    className="absolute inset-0"
+  />
+
+  {/* Blackish Overlay */}
+  <div className="absolute inset-0 bg-black/20 z-0" />
+
+  {/* Content */}
+  <motion.div
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+    className="relative z-10 max-w-3xl px-6"
+  >
+    <h1 className="mb-4 text-4xl font-bold text-yellow-600 sm:text-5xl dark:text-yellow-400">
+      About Ahmad FX Investors
+    </h1>
+    <p className="text-lg text-white dark:text-white">
+      Our journey, values, and vision to grow your wealth confidently.
+    </p>
+  </motion.div>
+</section>
 
       {/* Who We Are */}
       <section className="mx-auto max-w-6xl px-6 py-20">
