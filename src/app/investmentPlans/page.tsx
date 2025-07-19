@@ -14,7 +14,7 @@ const plans = [
   {
     period: "6 Months",
     roi: "3%",
-    withdrawal: "Monthly",
+    withdrawal: "Maturity Period",
     penalty: "18%",
     badge: "Starter",
     icon: <FaWallet />,
@@ -22,7 +22,7 @@ const plans = [
   {
     period: "1 Year",
     roi: "4%",
-    withdrawal: "Monthly",
+    withdrawal: "Maturity Period",
     penalty: "48%",
     badge: "Growth",
     icon: <FaLock />,
@@ -30,7 +30,7 @@ const plans = [
   {
     period: "2 Years",
     roi: "5%",
-    withdrawal: "Monthly",
+    withdrawal: "Maturity Period",
     penalty: "120%",
     badge: "Pro",
     icon: <FaRegMoneyBillAlt />,

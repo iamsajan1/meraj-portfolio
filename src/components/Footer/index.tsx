@@ -3,6 +3,7 @@
 import { Linkedin, Mail, Phone, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import SimpleDialog from "../SimpleDialog";
 
 const Footer = () => {
   return (
@@ -151,21 +152,44 @@ const Footer = () => {
                     TOS
                   </Link>
                 </li>
+
                 <li>
-                  <Link
-                    href="/privacy"
-                    className="text-sm hover:text-[#b59459]"
-                  >
-                    Privacy Policy
-                  </Link>
+                  <SimpleDialog
+                    label="Refund Policy"
+                    title="Refund Policy"
+                    content={
+                      <>
+                        Early withdrawal of funds prior to the agreed investment
+                        term will incur a{" "}
+                        <strong>10% principal deduction</strong> as an early
+                        exit penalty. This is clearly outlined in the investor
+                        agreement to ensure fairness, stability, and protection
+                        of overall fund performance.
+                      </>
+                    }
+                  />
                 </li>
+
                 <li>
-                  <Link
-                    href="/refund-policy"
-                    className="text-sm hover:text-[#b59459]"
-                  >
-                    Refund Policy
-                  </Link>
+                  <SimpleDialog
+                    label="Privacy & policy"
+                    title="Privacy & Fund Security"
+                    content={
+                      <>
+                        Your funds are safeguarded with institutional-level
+                        practices. We operate in collaboration with licensed
+                        hedge fund partners and employ robust risk management
+                        protocols to protect your capital. There is no exposure
+                        to unauthorized third-party access or speculative
+                        trading. In the event of any rare technical disruption,
+                        appropriate compensation will be offered based on the
+                        investor agreement. All personal information is kept
+                        strictly confidential in accordance with data protection
+                        laws. We do not share, sell, or disclose client data to
+                        any external party without written consent.
+                      </>
+                    }
+                  />
                 </li>
               </ul>
             </div>

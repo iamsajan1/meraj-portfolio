@@ -2,6 +2,7 @@ import AboutSectionOne from "@/components/About/AboutSectionOne";
 import Blog from "@/components/Blog";
  import ScrollUp from "@/components/Common/ScrollUp";
 import Contact from "@/components/Contact";
+import CryptoBundle from "@/components/CryptoBundle";
 import Features from "@/components/Features";
 import Hero from "@/components/Hero";
  import Testimonials from "@/components/Testimonials";
@@ -21,6 +22,7 @@ export default function Home() {
       <Hero />
       <Features />
       <Video />
+      <CryptoBundle/>
       <AboutSectionOne />
       <Testimonials />
        <Blog />

@@ -10,29 +10,29 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const testimonialData: Testimonial[] = [
   {
     id: 1,
-    name: "Musharof Chy",
-    designation: "Founder @TailGrids",
+    name: "Ankit Sharma",
+    designation: "Investor, Delhi",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      "Investing with Ahmad FX Team was one of my best financial decisions. The returns are consistent and the support is very transparent.",
     image: "/images/testimonials/auth-01.png",
     star: 5,
   },
   {
     id: 2,
-    name: "Devid Weilium",
-    designation: "Founder @UIdeck",
+    name: "Priya Mehta",
+    designation: "Freelancer, Pune",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
-    image: "/images/testimonials/auth-02.png",
+      "I started small but the monthly income has made a huge difference. I really like how professionally the team handles everything.",
+    image: "/images/testimonials/testimonial2.jpg",
     star: 5,
   },
   {
     id: 3,
-    name: "Lethium Frenci",
-    designation: "Founder @Lineicons",
+    name: "Rohit Verma",
+    designation: "Business Owner, Jaipur",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
-    image: "/images/testimonials/auth-03.png",
+      "Excellent experience. The MT5 tracking and regular reports make everything easy to understand, even if you're not a trader.",
+    image: "/images/testimonials/testimonial4.jpg",
     star: 5,
   },
   {
@@ -41,21 +41,20 @@ const testimonialData: Testimonial[] = [
     designation: "Investor",
     content:
       "Ahmad FX Team truly transformed my passive income. Transparent, safe, and very professional.",
-    image: "/images/testimonials/auth-04.png",
+    image: "/images/testimonials/testimonial3.jpg",
     star: 5,
   },
   {
     id: 5,
     name: "Kunal Kapoor",
-    designation: "Entrepreneur",
+    designation: "Entrepreneur, Mumbai",
     content:
-      "The monthly ROI and clear reporting are game-changers. Highly recommend!",
-    image: "/images/testimonials/auth-05.png",
+      "Getting monthly ROI without the stress of trading is a blessing. Highly recommended to anyone serious about long-term growth.",
+    image: "/images/testimonials/testimonial5.jpg",
     star: 5,
   },
 ];
 
-// ✅ Strongly typed Framer Motion variants
 const containerVariant: Variants = {
   hidden: {},
   visible: {
@@ -72,7 +71,7 @@ const cardVariant: Variants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut", // ✅ Use string literal value
+      ease: "easeOut",
     },
   },
 };
@@ -81,8 +80,10 @@ const Testimonials = () => {
   const [startIndex, setStartIndex] = useState(0);
   const itemsPerView = 3;
 
+  const maxStartIndex = Math.max(testimonialData.length - itemsPerView, 0);
+
   const handleNext = () => {
-    if (startIndex + itemsPerView < testimonialData.length) {
+    if (startIndex < maxStartIndex) {
       setStartIndex(startIndex + 1);
     }
   };
@@ -92,6 +93,17 @@ const Testimonials = () => {
       setStartIndex(startIndex - 1);
     }
   };
+
+  const visibleTestimonials = testimonialData.slice(
+    startIndex,
+    startIndex + itemsPerView
+  );
+
+  // Ensure at least one item is always shown
+  const paddedTestimonials = [
+    ...visibleTestimonials,
+    ...Array(Math.max(0, itemsPerView - visibleTestimonials.length)).fill(null),
+  ];
 
   return (
     <section className="dark:bg-bg-color-dark bg-gray-light relative z-10 py-16 md:py-20 lg:py-28">
@@ -129,13 +141,11 @@ const Testimonials = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {testimonialData
-              .slice(startIndex, startIndex + itemsPerView)
-              .map((testimonial) => (
-                <motion.div key={testimonial.id} variants={cardVariant}>
-                  <SingleTestimonial testimonial={testimonial} />
-                </motion.div>
-              ))}
+            {paddedTestimonials.map((testimonial, index) => (
+              <motion.div key={index} variants={cardVariant}>
+                {testimonial && <SingleTestimonial testimonial={testimonial} />}
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </div>

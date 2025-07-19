@@ -5,18 +5,20 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog Page | Free Next.js Template for Startup and SaaS",
-  description: "This is Blog Page for Startup Nextjs Template",
-  // other metadata
+  title: "Insights & Education | Ahmad FX Investment Blog",
+  description:
+    "Explore expert articles on forex trading, crypto investments, passive income strategies, and smart financial planning by Ahmad FX Team.",
+  
 };
 
 const Blog = () => {
   return (
     <>
-      <Breadcrumb
-        pageName="Blog Grid"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
-      />
+   <Breadcrumb
+  pageName="Our Blog & Insights"
+  description="Stay informed with the latest insights on forex trading, crypto investing, passive income strategies, and financial planning — curated by the Ahmad FX Team."
+/>
+
 
       <section className="pt-[120px] pb-[120px]">
         <div className="container">
@@ -37,7 +39,7 @@ const Blog = () => {
                 <li className="mx-1">
                   <a
                     href="#0"
-                    className="bg-body-color/15 text-body-color hover:bg-primary flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
+                    className="bg-body-color/15 text-body-color hover:bg-yellow-700 flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
                   >
                     Prev
                   </a>
@@ -45,7 +47,7 @@ const Blog = () => {
                 <li className="mx-1">
                   <a
                     href="#0"
-                    className="bg-body-color/15 text-body-color hover:bg-primary flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
+                    className="bg-body-color/15 text-body-color hover:bg-yellow-700 flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
                   >
                     1
                   </a>
@@ -53,7 +55,7 @@ const Blog = () => {
                 <li className="mx-1">
                   <a
                     href="#0"
-                    className="bg-body-color/15 text-body-color hover:bg-primary flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
+                    className="bg-body-color/15 text-body-color hover:bg-yellow-700flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
                   >
                     2
                   </a>
@@ -61,7 +63,7 @@ const Blog = () => {
                 <li className="mx-1">
                   <a
                     href="#0"
-                    className="bg-body-color/15 text-body-color hover:bg-primary flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
+                    className="bg-body-color/15 text-body-color hover:bg-yellow-700 flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
                   >
                     3
                   </a>
@@ -74,7 +76,7 @@ const Blog = () => {
                 <li className="mx-1">
                   <a
                     href="#0"
-                    className="bg-body-color/15 text-body-color hover:bg-primary flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
+                    className="bg-body-color/15 text-body-color hover:bg-yellow-700 flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
                   >
                     12
                   </a>
@@ -82,7 +84,7 @@ const Blog = () => {
                 <li className="mx-1">
                   <a
                     href="#0"
-                    className="bg-body-color/15 text-body-color hover:bg-primary flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
+                    className="bg-body-color/15 text-body-color hover:bg-yellow-700 flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
                   >
                     Next
                   </a>
