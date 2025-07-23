@@ -277,7 +277,7 @@ const Hero = () => {
               name="description"
               value={formData.description}
               onChange={handleInputChange}
-              rows="4"
+           
               className="mt-1 w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
               placeholder="Describe your investment objectives or any specific details..."
             />

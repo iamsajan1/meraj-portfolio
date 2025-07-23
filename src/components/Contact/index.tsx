@@ -52,36 +52,35 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    try {
-      // Initialize EmailJS with your public key
-      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '');
+ try {
+  emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '');
 
-      const result = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone_number: formData.phone,
-          subject: formData.subject,
-          message: formData.message,
-          to_email: 'kumarSantosh.iict06a@gmail.com'
-        }
-      );
+  const result = await emailjs.send(
+  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+  {
+    from_name: formData.name,
+    from_email: formData.email,
+    phone_number: formData.phone,
+    subject: formData.subject,
+    message: formData.message,
+  }
+);
 
-      if (result.status === 200) {
-        setSubmitStatus("success");
-        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-        setTimeout(closeDialog, 2000);
-      } else {
-        setSubmitStatus("error");
-      }
-    } catch (error) {
-      console.error('Email sending error:', error);
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
+
+  if (result.status === 200) {
+    setSubmitStatus("success");
+    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    setTimeout(closeDialog, 2000);
+  } else {
+    setSubmitStatus("error");
+  }
+} catch (error) {
+  console.error("Email sending error:", error);
+  setSubmitStatus("error");
+} finally {
+  setIsSubmitting(false);
+}
   };
 
   // Animation variants
