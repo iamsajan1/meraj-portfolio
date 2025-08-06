@@ -60,9 +60,30 @@ const Hero = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData); // Replace with actual submission logic
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  
+  try {
+    // Add formType to identify this as an investor form
+    const submissionData = {
+      ...formData,
+      formType: "investor" // This tells the script to use Sheet2
+    };
+
+    const response = await fetch(
+"https://script.google.com/macros/s/AKfycbzrAgBB6KMw09tJK_vHhnG9oHgGS5UPj9AXVR1tIp1PwYWV3kfZ5Y56-o-fcM1yQ4q5xQ/exec",
+      {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(submissionData).toString(),
+      }
+    );
+
+    // With no-cors mode we can't read response, assume success
+    alert("Your investor form has been submitted!");
     setFormData({
       name: "",
       email: "",
@@ -72,8 +93,12 @@ const Hero = () => {
       riskTolerance: "",
     });
     closeDialog();
-  };
-
+    
+  } catch (error) {
+    alert("Error submitting form. Please try again.");
+    console.error("Error:", error);
+  }
+};
   return (
     <section
       id="home"

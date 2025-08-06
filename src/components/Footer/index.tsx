@@ -30,11 +30,11 @@ const Footer = () => {
               </p>
               <p className="mb-2 text-sm text-gray-800 dark:text-white">
                 <a
-                  href="tel:+918052835237"
+                  href="tel:+919715392423"
                   className="flex items-center gap-2 hover:text-[#b59459]"
                 >
                   <Phone className="h-5 w-5" />
-                  <span>+918052835237</span>
+                  <span>+919715392423</span>
                 </a>
               </p>
               <p className="text-sm text-gray-800 dark:text-white">
@@ -43,7 +43,7 @@ const Footer = () => {
                   className="flex items-center gap-2 hover:text-[#b59459]"
                 >
                   <Mail className="h-5 w-5" />
-                  ahmadfxinvestor@gmail.com
+                  Integrationfxinvestor@gmail.com
                 </a>
               </p>
               <div className="mt-6 flex items-center gap-5 text-gray-700 dark:text-white">
@@ -73,7 +73,7 @@ const Footer = () => {
                   <Youtube className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://wa.me/8052835237"
+                  href="https://wa.me/9715392423"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:text-[#25D366]"
