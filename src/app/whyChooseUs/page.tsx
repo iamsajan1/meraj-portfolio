@@ -15,7 +15,7 @@ const reasons = [
     icon: <FaUserTie size={22} />,
     title: "Expert Leadership",
     description:
-      "Led by Meraj Ahmad with 5+ years of successful XAUUSD trading, backed by a real performance history.",
+      "Led by Meraj Integration with 5+ years of successful XAUUSD trading, backed by a real performance history.",
   },
   {
     icon: <FaShieldAlt size={22} />,
@@ -45,7 +45,7 @@ const reasons = [
     icon: <FaGlobe size={22} />,
     title: "Global-Scale Vision",
     description:
-      "Starting in India, Ahmad FX is planning regulated expansion into Dubai and Singapore.",
+      "Starting in India, Integration FX is planning regulated expansion into Dubai and Singapore.",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function WhyChooseUs() {
               transition={{ duration: 0.6 }}
               className="text-4xl md:text-5xl font-extrabold text-white"
             >
-              Why Choose Ahmad FX Team
+              Why Choose Integration FX Team
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 10 }}

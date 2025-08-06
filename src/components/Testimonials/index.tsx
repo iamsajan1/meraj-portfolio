@@ -13,7 +13,7 @@ const testimonialData: Testimonial[] = [
     name: "Ankit Sharma",
     designation: "Investor, Delhi",
     content:
-      "Investing with Ahmad FX Team was one of my best financial decisions. The returns are consistent and the support is very transparent.",
+      "Investing with Integration FX Team was one of my best financial decisions. The returns are consistent and the support is very transparent.",
     image: "/images/testimonials/auth-01.png",
     star: 5,
   },
@@ -40,7 +40,7 @@ const testimonialData: Testimonial[] = [
     name: "Sarah Bennet",
     designation: "Investor",
     content:
-      "Ahmad FX Team truly transformed my passive income. Transparent, safe, and very professional.",
+      "Integration FX Team truly transformed my passive income. Transparent, safe, and very professional.",
     image: "/images/testimonials/testimonial3.jpg",
     star: 5,
   },
@@ -110,7 +110,7 @@ const Testimonials = () => {
       <div className="container">
         <SectionTitle
           title="What Our Investors Say"
-          paragraph="Here's what our investors say about partnering with Ahmad FX Team."
+          paragraph="Here's what our investors say about partnering with Integration FX Team."
           center
         />
 

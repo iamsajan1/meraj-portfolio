@@ -29,7 +29,7 @@ const AboutPage = () => {
     className="relative z-10 max-w-3xl px-6"
   >
     <h1 className="mb-4 text-4xl font-bold text-yellow-600 sm:text-5xl dark:text-yellow-400">
-      About Ahmad FX Investors
+      About Integration FX Investors
     </h1>
     <p className="text-lg text-white dark:text-white">
       Our journey, values, and vision to grow your wealth confidently.
@@ -83,7 +83,7 @@ const AboutPage = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            Why Choose Ahmad FX?
+            Why Choose Integration FX?
           </motion.h2>
           <motion.p
             className="mx-auto mb-12 max-w-3xl text-gray-700 dark:text-white/80"
@@ -145,7 +145,7 @@ const AboutPage = () => {
               Our Vision
             </h2>
             <p className="mb-6 leading-relaxed text-gray-800 dark:text-white/80">
-              At Ahmad FX Investors, we envision a world where financial freedom
+              At Integration FX Investors, we envision a world where financial freedom
               is accessible to every serious investor. Our vision is not just
               about growing wealth—it’s about building a future you can trust.
             </p>

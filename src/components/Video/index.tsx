@@ -97,7 +97,7 @@ export default function Video() {
             {
               icon: <Briefcase className="text-yellow-500 mb-4" size={40} />,
               title: "Account Management",
-              description: "We fully manage your capital with trading expertise and disciplined execution.",
+              description: "We fully manage your capital with trading expertise and disciplined execution on MT5.",
             },
             {
               icon: <Wallet className="text-yellow-500 mb-4" size={40} />,

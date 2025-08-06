@@ -41,15 +41,15 @@ const Features = () => {
                 <th className="px-6 py-5 font-semibold uppercase">Lock-in</th>
                 <th className="px-6 py-5 font-semibold uppercase">Return (Monthly)</th>
                 <th className="px-6 py-5 font-semibold uppercase">ROI</th>
-                <th className="px-6 py-5 font-semibold uppercase">Sharing</th>
-                <th className="px-6 py-5 font-semibold uppercase">Exit</th>
+                <th className="px-6 py-5 font-semibold uppercase"> profit Sharing</th>
+                <th className="px-6 py-5 font-semibold uppercase">Early Exit</th>
               </tr>
             </thead>
             <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
               {[
-                ["6 months", "3.5%", "21%", "65/35", "5 penalty"],
-                ["1 year", "4%", "43%", "70/30", "No penalty"],
-                ["2 years", "5%", "120%", "75/25", "No penalty"]
+                ["6 months", "3.5%", "21%", "65/35", "5% to 7% penalty"],
+                ["1 year", "4%", "43%", "70/30", "5% to 7% penalty"],
+                ["2 years", "5%", "120%", "75/25", "5% to 7%  penalty"],
               ].map((row, index) => (
                 <tr
                   key={index}
@@ -69,13 +69,16 @@ const Features = () => {
         <div className="grid gap-6 mt-14 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-gray-800 dark:text-white">
           {[
             "Minimum Investment: ₹50,000",
-            "Payout: Monthly or Compounded",
+            "Maturity period : Monthly or Compounded",
             "Capital Agreement Provided",
             "50% – Forex Trading (SMC)",
             "30% – Prop Firm Funded Accounts",
             "20% – Reserve (Liquidity Buffer)",
             "Risk Control in Place",
-            "Monthly Snapshot Shared"
+            "Account management available on mt5",
+            "In case of capital drawdown we will recover your 100% capital",
+            "Forex Account management with (50-50)% profit sharing",
+            "Amount accept via crypto Trc-20 ,Bep-20  upi and paypal"
           ].map((item, index) => (
             <div
               key={index}

@@ -47,41 +47,26 @@ const Contact = () => {
   };
 
   // Handle form submission with EmailJS
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus("idle");
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
- try {
-  emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '');
-
-  const result = await emailjs.send(
-  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
-  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
-  {
-    from_name: formData.name,
-    from_email: formData.email,
-    phone_number: formData.phone,
-    subject: formData.subject,
-    message: formData.message,
-  }
-);
-
-
-  if (result.status === 200) {
-    setSubmitStatus("success");
+  try {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbzv2qxOatuJT96kZ-Cf1zlALnqpqPaHMYkcAMZvCbMUuv-OyZFrCJxZTJG_qk8IWlFGQw/exec", {
+      method: "POST",
+      mode: 'no-cors',
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded", 
+      },
+      body: new URLSearchParams(Object.entries(formData)).toString()
+    });
+    alert("Your ticket has been submitted!");
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-    setTimeout(closeDialog, 2000);
-  } else {
-    setSubmitStatus("error");
+    
+  } catch (error) {
+    alert("Error submitting form. Please try again.");
+    console.error("Error:", error);
   }
-} catch (error) {
-  console.error("Email sending error:", error);
-  setSubmitStatus("error");
-} finally {
-  setIsSubmitting(false);
-}
-  };
+};
 
   // Animation variants
   const formVariants: Variants = {

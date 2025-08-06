@@ -7,25 +7,22 @@ import SimpleDialog from "../SimpleDialog";
 
 const Footer = () => {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white pt-20 text-gray-900 transition-colors duration-300 md:pt-24 lg:pt-32 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 dark:text-yellow-100">
+    <footer className="relative overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white pt-20 text-gray-900 transition-colors duration-300 md:pt-15 lg:pt-15 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 dark:text-yellow-100">
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           {/* Logo & Description */}
           <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-5/12">
-            <div className="mb-12 max-w-[360px] lg:mb-16">
-              <Link href="/" className="mb-8 inline-block">
-                <div className="flex items-center">
+            <div className="max-w-[360px] lg:mb-0 ">
+              <Link href="/" className="inline-block mb-8">
+                
                   <Image
-                    src="/images/logo/logo3.png"
-                    alt="AhmadFX Logo"
-                    width={100}
+                    src="/images/logo/immage.png"
+                    alt="IntegrationrationFX Logo"
+                    width={200}
                     height={40}
-                    className=""
+                    className="mb-6"
                   />
-                  <span className="text-2xl font-bold text-[#b59459]">
-                    Ahmad FX Team
-                  </span>
-                </div>
+                
               </Link>
               <p className="mb-6 text-base text-gray-700 hover:text-[#b59459] dark:text-white">
                 Empowering traders with insights, analysis, and proven
@@ -42,7 +39,7 @@ const Footer = () => {
               </p>
               <p className="text-sm text-gray-800 dark:text-white">
                 <a
-                  href="mailto:ahmadfxinvestor@gmail.com"
+                  href="mailto:Integrationrationrationrationrationrationrationrationrationrationrationrationrationrationrationrationrationrationfxinvestor@gmail.com"
                   className="flex items-center gap-2 hover:text-[#b59459]"
                 >
                   <Mail className="h-5 w-5" />
@@ -76,7 +73,7 @@ const Footer = () => {
                   <Youtube className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://wa.me/80528835237"
+                  href="https://wa.me/8052835237"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:text-[#25D366]"
@@ -228,7 +225,7 @@ const Footer = () => {
         <div className="my-8 border-t border-[#b59459]"></div>
 
         <p className="text-center text-sm text-gray-700 dark:text-[#b59459]">
-          &copy; {new Date().getFullYear()} Ahmad FX. All rights reserved.
+          &copy; {new Date().getFullYear()} Integrationration FX. All rights reserved.
         </p>
       </div>
     </footer>

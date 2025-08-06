@@ -143,7 +143,7 @@ export default function InvestmentPlans() {
       {/* Trust & Security */}
       <section className="max-w-5xl mx-auto text-center mb-24">
         <h3 className="text-3xl font-bold text-[#b59459] mb-10">
-          Why Trust Ahmad FX Team?
+          Why Trust Integration FX Team?
         </h3>
         <div className="grid md:grid-cols-3 gap-8">
           {[

@@ -52,32 +52,27 @@ const Header = () => {
             <div className="w-150 max-w-full px-2">
               <Link
                 href="/"
-                className={`flex w-full items-center gap-3 transition-all duration-300 ${
+                className={`flex ml-10 w-full items-center gap-3 transition-all duration-300 ${
                   sticky ? "py-5 lg:py-2" : "py-8"
                 }`}
               >
                 {/* Light Mode Logo */}
                 <Image
-                  src="/images/logo/logo3.png"
-                  alt="Ahmad FX Logo"
-                  width={100}
-                  height={30}
+                  src="/images/logo/immage.png"
+                  alt="Integration FX Logo"
+                  width={200}
+                  height={40}
                   className="block dark:hidden"
                 />
 
                 {/* Dark Mode Logo (image) */}
                 <Image
-                  src="/images/logo/logo3.png"
-                  alt="Ahmad FX Logo Dark"
-                  width={100}
-                  height={30}
+                  src="/images/logo/immage.png"
+                  alt="Integration FX Logo Dark"
+                  width={200}
+                  height={40}
                   className="hidden dark:block"
                 />
-
-                {/* Optional text in dark mode (if image is not shown or as extra) */}
-                <span className="text-[20px] font-bold text-[#b59459] dark:inline dark:text-[#b59459]">
-                  AHMAD FX TEAM
-                </span>
               </Link>
             </div>
 

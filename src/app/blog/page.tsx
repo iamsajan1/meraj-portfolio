@@ -5,9 +5,9 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Insights & Education | Ahmad FX Investment Blog",
+  title: "Insights & Education | Integration FX Investment Blog",
   description:
-    "Explore expert articles on forex trading, crypto investments, passive income strategies, and smart financial planning by Ahmad FX Team.",
+    "Explore expert articles on forex trading, crypto investments, passive income strategies, and smart financial planning by Integration FX Team.",
   
 };
 
@@ -16,7 +16,7 @@ const Blog = () => {
     <>
    <Breadcrumb
   pageName="Our Blog & Insights"
-  description="Stay informed with the latest insights on forex trading, crypto investing, passive income strategies, and financial planning — curated by the Ahmad FX Team."
+  description="Stay informed with the latest insights on forex trading, crypto investing, passive income strategies, and financial planning — curated by the Integration FX Team."
 />
 
 

@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion, Variants } from "framer-motion";
  
 const Contact = () => {
-  // Form state
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,19 +11,30 @@ const Contact = () => {
     subject: "",
     message: "",
   });
-
-  // Handle input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-  // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData); // Replace with API call
+  try {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbzv2qxOatuJT96kZ-Cf1zlALnqpqPaHMYkcAMZvCbMUuv-OyZFrCJxZTJG_qk8IWlFGQw/exec", {
+      method: "POST",
+      mode: 'no-cors',
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded", 
+      },
+      body: new URLSearchParams(Object.entries(formData)).toString()
+    });
+    alert("Your ticket has been submitted!");
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-  };
+    
+  } catch (error) {
+    alert("Error submitting form. Please try again.");
+    console.error("Error:", error);
+  }
+};
 
   // Animation variants
   const formVariants: Variants = {

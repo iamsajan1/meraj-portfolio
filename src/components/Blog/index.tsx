@@ -64,7 +64,7 @@ const Blog = () => {
         >
           <SectionTitle
             title="Latest Insights from Our Team"
-            paragraph="Stay up to date with news, market updates, strategies, and insights directly from the Ahmad FX Team."
+            paragraph="Stay up to date with news, market updates, strategies, and insights directly from the Integration FX Team."
             center
           />
         </motion.div>

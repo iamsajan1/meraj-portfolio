@@ -100,7 +100,7 @@ export default function Video() {
             >
               <TrendingUp className="text-yellow-500" size={24} />
               <span className="text-dark dark:text-white font-medium">
-                Diversified strategy: Forex + Prop Firms
+                Diversified strategy: Forex + Crypto currency
               </span>
             </motion.div>
           </div>

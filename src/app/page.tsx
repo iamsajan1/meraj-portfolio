@@ -10,8 +10,8 @@ import Video from "@/components/Video";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Ahmad FX Team",
-  description: "Secure your future with Ahmad FX Team - the leading forex trading team. Join us for expert guidance, innovative strategies, and a community of successful traders.",
+  title: "Integration FX Team",
+  description: "Secure your future with Integration FX Team - the leading forex trading team. Join us for expert guidance, innovative strategies, and a community of successful traders.",
   // other metadata
 };
 
