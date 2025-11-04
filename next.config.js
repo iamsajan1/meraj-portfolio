@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", // 👈 add this line to generate static site in `out/`
+  output: "export",
 
   images: {
+    unoptimized: true, // 👈 ADD THIS LINE
     remotePatterns: [
       {
         protocol: "https",
